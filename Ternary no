@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+std::string toTernary(int num) {
+    if (num == 0) return "0";  
+    std::string ternary = "";
+    while (num > 0) {
+        int remainder = num % 3;
+        ternary += std::to_string(remainder);  
+        num /= 3;
+    }
+    std::reverse(ternary.begin(), ternary.end());
+    return ternary;
+}
+int main() {
+    int num;
+    std::cout << "Enter a number to convert to ternary: ";
+    std::cin >> num;
+    std::string ternary = toTernary(num);
+    std::cout << "Ternary representation: " << ternary << std::endl;
+    return 0;
+}
