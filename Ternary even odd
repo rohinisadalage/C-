@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int number;
+    cout << "Enter an integer: ";
+    cin >> number;
+    cout << number << " is " << ((number % 2 == 0) ? "even." : "odd.") << endl;
+    return 0;
+}
