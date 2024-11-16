@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int number = 1;
+    int limit;       
+    cout << "Enter the limit: ";
+    cin >> limt;
+    do {
+        cout << number << endl;
+        number++;
+    } while (number <= limit);
+    return 0;
+}
