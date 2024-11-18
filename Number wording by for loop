@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+void numberToWords(int num) {
+    string ones[] = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+    string teens[] = {"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    string tens[] = {"", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+    if (num == 0) {
+        cout << "Zero" << endl;
+        return;
+    }
+    int parts[4] = {0};
+    string result = "";
+    for (int i = 3; i >= 0; --i) {
+        parts[i] = num % 10;
+        num /= 10;
+    }
+    for (int i = 0; i < 4; ++i) {
+        if (i == 0 && parts[i] > 0) {
+            result += ones[parts[i]] + " Thousand ";
+        } else if (i == 1 && parts[i] > 0) 
+            result += ones[parts[i]] + " Hundred ";
+        } else if (i == 2) {
+            if (parts[i] == 1) {
+                result += teens[parts[i + 1]] + " ";
+                break; 
+            } else if (parts[i] > 1) {
+                result += tens[parts[i]] + " ";
+            }
+        } else if (i == 3 && parts[i] > 0) 
+            result += ones[parts[i]] + " ";
+        }
+    }
+    cout << result << endl;
+}
+l
+int main() {
+    int num;
+    cout <<
