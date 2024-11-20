@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function to print the word equivalent of a single digit
+void printWord(int num) {
+    switch (num) {
+        case 0: cout << "zero "; break;
+        case 1: cout << "one "; break;
+        case 2: cout << "two "; break;
+        case 3: cout << "three "; break;
+        case 4: cout << "four "; break;
+        case 5: cout << "five "; break;
+        case 6: cout << "six "; break;
+        case 7: cout << "seven "; break;
+        case 8: cout << "eight "; break;
+        case 9: cout << "nine "; break;
+        default: cout << "Invalid digit "; break;
+    }
+}
+
+int main() {
+    int num, reversedNum = 0, digit;
+
+    // Input the number
+    cout << "Enter a number (0-9999): ";
+    cin >> num;
+
+    if (num < 0 || num > 9999) {
+        cout << "Number out of range!" << endl;
+        return 1;
+    }
+
+    // Reverse the number to process it digit by digit from left to right
+    int temp
