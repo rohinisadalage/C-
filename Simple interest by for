@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    float principal, rate, time, simpleInterest;
+    cout << "Enter the number of calculations: ";
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        cout << "\nCalculation " << i << ":\n";
+        cout << "Enter principal amount: ";
+        cin >> principal;
+        cout << "Enter annual interest rate (in %): ";
+        cin >> rate;
+        cout << "Enter time (in years): ";
+        cin >> time;
+        simpleInterest = (principal * rate * time) / 100;
+        cout << "Simple Interest = " << simpleInterest << endl;
+    }
+    return 0;
+}
