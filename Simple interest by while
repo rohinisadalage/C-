@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double principal, rate, time, simpleInterest;
+    int i = 0;
+
+    cout << "Enter the principal amount: ";
+    cin >> principal;
+
+    cout << "Enter the annual interest rate (in percentage): ";
+    cin >> rate;
+
+    cout << "Enter the time period (in years): ";
+    cin >> time;
+
+    while (i < 1) { // Use a while loop for calculating the interest once
+        simpleInterest = (principal * rate * time) / 100;
+        i++; // Increment the counter to exit the loop
+    }
+
+    cout << "Simple Interest = " << simpleInterest << endl;
+
+    return 0;
+}
