@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <algorithm> 
+using namespace std;
+void decimalToTernary(int number) {
+    string ternary = "";
+    if (number == 0) {
+        cout << "Ternary: 0" << endl;
+        return;
+    }
+    bool isNegative = (number < 0);
+    if (isNegative) {
+        number = -number;
+    }
+    do {
+        int remainder = number % 3;    
+        ternary += to_string(remainder); 
+        number /= 3;                  
+    } while (number > 0);
+    if (isNegative) {
+        ternary += '-';
+    }
+    reverse(ternary.begin(), ternary.end());
+    cout << "Ternary: " << ternary << endl;
+}
+int main() {
+    int number;
+    cout << "Enter a decimal number: ";
+    cin >> number;
+    decimalToTernary(number);
+    return 0;
+}
