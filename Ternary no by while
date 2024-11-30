@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+void decimalToTernary(int number) {
+    vector<int> ternary;
+    if (number == 0) {
+        cout << "Ternary: 0" << endl;
+        return;
+    }
+    while (number > 0) {
+        ternary.push_back(number % 3); 
+        number /= 3;                 
+    cout << "Ternary: ";
+    for (int i = ternary.size() - 1; i >= 0; i--) {
+        cout << ternary[i];
+    }
+    cout << endl;
+}
+int main() {
+    int decimalNumber;
+    cout << "Enter a decimal number: ";
+    cin >> decimalNumber;
+    if (decimalNumber < 0) {
+        cout << "Please enter a non-negative number." << endl;
+    } else {
+        decimalToTernary(decimalNumber);
+    }
+    return 0;
+}
