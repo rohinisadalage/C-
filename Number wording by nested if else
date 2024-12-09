@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+void numberToWords(int number) {
+    if (number < 0 || number > 99) {
+        cout << "Number out of range. Please enter a number between 0 and 99." << endl;
+        return;
+    }
+    if (number == 0) {
+        cout << "Zero" << endl;
+    } else {
+        if (number / 10 == 1) { // Special case: 10-19
+            if (number == 10) cout << "Ten" << endl;
+            else if (number == 11) cout << "Eleven" << endl;
+            else if (number == 12) cout << "Twelve" << endl;
+            else if (number == 13) cout << "Thirteen" << endl;
+            else if (number == 14) cout << "Fourteen" << endl;
+            else if (number == 15) cout << "Fifteen" << endl;
+            else if (number == 16) cout << "Sixteen" << endl;
+            else if (number == 17) cout << "Seventeen" << endl;
+            else if (number == 18) cout << "Eighteen" << endl;
+            else if (number == 19) cout << "Nineteen" << endl;
+        } else {
+            if (number / 10 == 2) cout << "Twenty";
+            else if (number / 10 == 3) cout << "Thirty";
+            else if (number / 10 == 4) cout << "Forty";
+            else if (number / 10 == 5) cout << "Fifty";
+            else if (number / 10 == 6) cout << "Sixty";
+            else if (number / 10 == 7) cout << "Seventy";
+            else if (number / 10 == 8) cout << "Eighty";
+            else if (number / 10 == 9) cout << "Ninety";
+            if (number % 10 != 0) {
+                if (number / 10 != 0) cout << " ";
+                if (number % 10 == 1) cout << "One" << endl;
+                else if (number % 10 == 2) cout << "Two" << endl;
+                else if (number % 10 == 3) cout << "Three" << endl;
+                else if (number % 10 == 4) cout << "Four" << endl;
+                else if (number % 10 == 5) cout << "Five" << endl;
+                else if (number % 10 == 6) cout << "Six" << endl;
+                else if (number % 10 == 7) cout << "Seven" << endl;
+                else if (number % 10 == 8) cout << "Eight" << endl;
+                else if (number % 10 == 9) cout << "Nine" << endl;
+            } else {
+                cout << endl;
+            }
+        }
+    }
+}
+int main() {
+    int number;
+    cout << "Enter a number (0-99): ";
+    cin >> number;
+    numberToWords(number);
+    return 0;
+}
