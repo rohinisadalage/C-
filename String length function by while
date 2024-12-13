@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int stringLength(const char* str) {
+    int length = 0;
+    while (str[length] != '\0') { 
+        length++;
+    }
+    return length;
+}
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    getline(cin, input);
+    cout << "The length of the string is: " << stringLength(input.c_str()) << endl;
+    return 0;
+}
