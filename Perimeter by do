@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int choice;
+    double length, breadth, radius, perimeter;
+    do {
+        cout << "Choose a shape to calculate the perimeter:\n";
+        cout << "1. Rectangle\n";
+        cout << "2. Circle\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        switch (choice) {
+            case 1: 
+                cout << "Enter the length of the rectangle: ";
+                cin >> length;
+                cout << "Enter the breadth of the rectangle: ";
+                cin >> breadth;
+                perimeter = 2 * (length + breadth);
+                cout << "The perimeter of the rectangle is: " << perimeter << endl;
+                break;
+            case 2: 
+                cout << "Enter the radius of the circle: ";
+                cin >> radius;
+                perimeter = 2 * 3.14159 * radius;
+                cout << "The perimeter (circumference) of the circle is: " << perimeter << endl;
+                break;
+            case 3: 
+                cout << "Exiting the program." << endl;
+                break;
+            default:
+                cout << "Invalid choice! Please try again." << endl;
+        }
+    } while (choice != 3);
+    return 0;
+}
