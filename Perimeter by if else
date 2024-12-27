@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int choice;
+    float perimeter, side, length, breadth, radius;
+    const float pi = 3.14159;
+    cout << "Choose the shape to calculate perimeter:\n";
+    cout << "1. Square\n";
+    cout << "2. Rectangle\n";
+    cout << "3. Circle\n";
+    cout << "Enter your choice (1/2/3): ";
+    cin >> choice;
+    if (choice == 1) {
+        cout << "Enter the side of the square: ";
+        cin >> side;
+        if (side > 0) {
+            perimeter = 4 * side;
+            cout << "Perimeter of the square: " << perimeter << endl;
+        } else {
+            cout << "Side length must be positive.\n";
+        }
+    } else if (choice == 2) {
+        cout << "Enter the length of the rectangle: ";
+        cin >> length;
+        cout << "Enter the breadth of the rectangle: ";
+        cin >> breadth;
+        if (length > 0 && breadth > 0) {
+            perimeter = 2 * (length + breadth);
+            cout << "Perimeter of the rectangle: " << perimeter << endl;
+        } else {
+            cout << "Length and breadth must be positive.\n";
+        }
+    } else if (choice == 3) {
+        cout << "Enter the radius of the circle: ";
+        cin >> radius;
+        if (radius > 0) {
+            perimeter = 2 * pi * radius;
+            cout << "Perimeter (circumference) of the circle: " << perimeter << endl;
+        } else {
+            cout << "Radius must be positive.\n";
+        }
+    } else {
+        cout << "Invalid choice! Please select 1, 2, or 3.\n";
+    }
+    return 0;
+}
