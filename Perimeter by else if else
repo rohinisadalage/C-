@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    double perimeter, radius, length, width, side1, side2, side3;
+
+    cout << "Choose a shape to calculate its perimeter:\n";
+    cout << "1. Circle\n";
+    cout << "2. Rectangle\n";
+    cout << "3. Triangle\n";
+    cout << "Enter your choice (1/2/3): ";
+    cin >> choice;
+
+    if (choice == 1) {
+        // Circle
+        cout << "Enter the radius of the circle: ";
+        cin >> radius;
+        if (radius > 0) {
+            perimeter = 2 * 3.14159 * radius;
+            cout << "The perimeter of the circle is: " << perimeter << endl;
+        } else {
+            cout << "Invalid radius! Radius must be positive." << endl;
+        }
+    } else if (choice == 2) {
+        // Rectangle
+        cout << "Enter the length of the rectangle: ";
+        cin >> length;
+        cout << "Enter the width of the rectangle: ";
+        cin >> width;
+        if (length > 0 && width > 0) {
+            perimeter = 2 * (length + width);
+            cout << "The perimeter of the rectangle is: " << perimeter << endl;
+        } else {
+            cout << "Invalid dimensions! Length and width must be positive." << endl;
+        }
+    } else if (choice == 3) {
+        // Triangle
+        cout << "Enter the three sides of the triangle:\n";
+        cout << "Side 1: ";
+        cin >> side1;
+        cout << "Side 2: ";
+        cin >> side2;
+        cout << "Side 3: ";
+        cin >> side3;
+        if (side1 > 0 && side2 > 0 && side3 > 0) {
+            perimeter = side1 + side2 + side3;
+            cout << "The perimeter of the triangle is: " << perimeter << endl;
+        } else {
+            cout << "Invalid sides! All sides must be positive." << endl;
+        }
+    } else {
+        cout << "Invalid choice! Please select 1, 2, or 3." << endl;
+    }
+    return 0;
+}
