@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main() {
+    double length, breadth, perimeter;
+    char choice = 'y';
+    while (choice == 'y' || choice == 'Y') {
+        cout << "Enter the length of the rectangle: ";
+        cin >> length;
+        cout << "Enter the breadth of the rectangle: ";
+        cin >> breadth;
+        perimeter = 2 * (length + breadth);
+        cout << "The perimeter of the rectangle is: " << perimeter << endl;
+        cout << "Do you want to calculate the perimeter for another rectangle? (y/n): ";
+        cin >> choice;
+    }
+    cout << "Program terminated." << endl;
+    return 0;
+}
