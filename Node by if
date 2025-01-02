@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+struct Node {
+    int data;
+    Node* next;
+    Node(int value) {
+        data = value;
+        next = nullptr;
+    }
+};
+void displayList(Node* head) {
+    if (head == nullptr) {
+        cout << "The list is empty." << endl;
+        return;
+    }
+    Node* temp = head;
+    while (temp != nullptr) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
+int main() {
+    Node* head = nullptr; 
+    Node* temp = nullptr;
+    head = new Node(10);
+    if (head != nullptr) { 
+        temp = new Node(20);
+        if (temp != nullptr) { 
+            head->next = temp;
+            temp->next = new Node(30);
+            if (temp->next == nullptr) {
+                cout << "Failed to add the third node." << endl;
+            }
+        } else {
+            cout << "Failed to add the second node." << endl;
+        }
+    } else {
+        cout << "Failed to create the first node." << endl;
+    }
+    displayList(head);
+    temp = head;
+    while (temp != nullptr) {
+        Node* next = temp->next;
+        delete temp;
+        temp = next;
+    }
+    return 0;
+}
