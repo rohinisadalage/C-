@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+struct Node {
+    int data;     
+    Node* next;    
+};
+Node* createNode(int value) {
+    Node* newNode = new Node;
+    if (newNode == nullptr) {
+        cout << "Memory allocation failed!" << endl;
+        return nullptr;
+    }
+    newNode->data = value;
+    newNode->next = nullptr;
+    return newNode;
+}
+int main() {
+    int inputValue;
+    cout << "Enter a value for the node: ";
+    cin >> inputValue;
+
+    Node* head = nullptr;
+    if (inputValue > 0) {
+        head = createNode(inputValue);
+        if (head != nullptr) {
+            cout << "Node created with value: " << head->data << endl;
+        }
+    } else {
+        cout << "Node creation skipped as input value is non-positive." << endl;
+    }
+    if (head != nullptr) {
+        delete head;
+    }
+    return 0;
+}
