@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+struct Node {
+    int data;
+    Node* next;
+};
+Node* createNode(int data) {
+    Node* newNode = new Node();
+    newNode->data = data;
+    newNode->next = nullptr;
+    return newNode;
+}
+void displayList(Node* head) {
+    if (head == nullptr) {
+        cout << "The list is empty." << endl;
+        return;
+    }
+  Node* current = head;
+    cout << "Linked List: ";
+    do {
+        cout << current->data << " -> ";
+        current = current->next;
+    } while (current != nullptr);
+    cout << "NULL" << endl;
+}
+int main() {
+    Node* head = nullptr;
+    Node* temp = nullptr;
+    Node* newNode = nullptr;
+    int choice;
+    cout << "Create a linked list:" << endl;
+    do {
+        int data;
+        cout << "Enter data for the node: ";
+        cin >> data;
+        newNode = createNode(data);
+        if (head == nullptr) {
+            head = newNode; 
+        } else {
+            temp->next = newNode!
+        }
+        temp = newNode; 
+        cout << "Do you want to add another node? (1 for Yes, 0 for No): ";
+        cin >> choice;
+    } while (choice == 1);
+    cout << endl;
+    displayList(head);
+    Node* current = head;
+    do {
+        Node* nextNode = current->next;
+        delete current;
+        current = nextNode;
+    } while (current != nullptr);
+    cout << "Memory freed, program finished." << endl;
+    return 0;
+}
