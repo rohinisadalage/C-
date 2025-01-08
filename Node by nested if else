@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int choice;
+    cout << "Welcome to the Node Decision Program!" << endl;
+    cout << "Choose your first path:" << endl;
+    cout << "1. Go left" << endl;
+    cout << "2. Go right" << endl;
+    cin >> choice;
+    if (choice == 1) {
+        cout << "You chose to go left." << endl;
+        cout << "Now choose:" << endl;
+        cout << "1. Climb the hill" << endl;
+        cout << "2. Enter the cave" << endl;
+        cin >> choice;
+        if (choice == 1) {
+            cout << "You climbed the hill and found a beautiful view!" << endl;
+        } else if (choice == 2) {
+            cout << "You entered the cave and discovered hidden treasure!" << endl;
+        } else {
+            cout << "Invalid choice. The path ends here." << endl;
+        }
+    } else if (choice == 2) {
+        cout << "You chose to go right." << endl;
+        cout << "Now choose:" << endl;
+        cout << "1. Cross the river" << endl;
+        cout << "2. Walk through the forest" << endl;
+        cin >> choice;
+        if (choice == 1) {
+            cout << "You crossed the river and reached a small village!" << endl;
+        } else if (choice == 2) {
+            cout << "You walked through the forest and found a hidden cabin!" << endl;
+        } else {
+            cout << "Invalid choice. The path ends here." << endl;
+        }
+    } else {
+        cout << "Invalid choice. The program ends here." << endl;
+    }
+    return 0;
+}
