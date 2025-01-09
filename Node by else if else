@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+struct Node {
+    int data;
+    Node* next;
+};
+int main() {
+    Node* head = nullptr;
+    int choice, value;
+    while (true) {
+        cout << "\nMenu:\n";
+        cout << "1. Create a node\n";
+        cout << "2. Display the node\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        if (choice == 1) {
+            if (head == nullptr) {
+                head = new Node();
+                if (head == nullptr) {
+                    cout << "Memory allocation failed!\n";
+                } else {
+                    cout << "Enter data for the node: ";
+                    cin >> value;
+                    head->data = value;
+                    head->next = nullptr;
+                    cout << "Node created successfully.\n";
+                }
+            } else {
+                cout << "Node already exists!\n";
+            }
+        } else if (choice == 2) {
+            if (head == nullptr) {
+                cout << "No node exists to display.\n";
+            } else {
+                cout << "Node data: " << head->data << endl;
+            }
+        } else if (choice == 3) {
+            cout << "Exiting program.\n";
+            break;
+        } else {
+            cout << "Invalid choice. Please try again.\n";
+        }
+    }
+    if (head != nullptr) {
+        delete head;
+        head = nullptr;
+    }
+    return 0;
+}
