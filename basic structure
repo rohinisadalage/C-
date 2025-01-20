@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void greet();
+
+int main() {
+    int number;
+    string name;
+
+    cout << "Enter your name: ";
+    cin >> name;
+
+    cout << "Enter a number: ";
+    cin >> number;
+
+    cout << "Hello, " << name << "! You entered the number " << number << "." << endl;
+
+    greet();
+
+    return 0;
+}
+
+void greet() {
+    cout << "Welcome to the basic C++ program structure!" << endl;
+}
