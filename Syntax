@@ -1,0 +1,42 @@
+#include <iostream>  // Standard input-output library
+
+using namespace std;  // Allows usage of standard namespace
+
+// Function declaration
+void greet();
+
+int main() {
+    // Variable declaration
+    int number;
+
+    // Print a message to the console
+    cout << "Enter a number: ";
+
+    // Take input from the user
+    cin >> number;
+
+    // Conditional statement
+    if (number % 2 == 0) {
+        cout << "The number " << number << " is even." << endl;
+    } else {
+        cout << "The number " << number << " is odd." << endl;
+    }
+
+    // Loop example
+    cout << "Counting from 1 to " << number << ":" << endl;
+    for (int i = 1; i <= number; i++) {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    // Function call
+    greet();
+
+    // Return statement
+    return 0;
+}
+
+// Function definition
+void greet() {
+    cout << "Hello! This is a basic C++ program." << endl;
+}
