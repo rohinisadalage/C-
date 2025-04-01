@@ -2,14 +2,15 @@
 using namespace std;
 int main()
 {
-	int i,n,fact=1;
-	cout<<"Enter the any no:"<<endl;
-	cin>>n;
-	for( i=1; i<=n; ++i)
-	{
-		fact*=i;
-	}
-	cout<<"The factorial of you enterd no is: "<<fact;
-	
-	return 0;
+    int fact=1,n;
+    cout<<"Enter the value of those whose you have factorial: ";
+    cin>>n;
+    while(n>=1)
+    {
+        fact=fact*n;
+        n=n-1;
+    }
+    cout<<"The factorial of the given number is: "<<fact;
+    cout<<endl<<"Thenk you..!";
+    return 0;
 }
